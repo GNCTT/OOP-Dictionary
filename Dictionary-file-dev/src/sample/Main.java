@@ -31,6 +31,7 @@ public class Main extends Application {
         dictionary_list.add(b);
         dictionary_list.add(c);
         dcm.dictionaryBasic();
+        dcm.showAllWords();
         launch(args);
     }
 }
