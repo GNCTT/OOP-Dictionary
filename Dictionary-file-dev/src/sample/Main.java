@@ -1,12 +1,16 @@
 package sample;
 
 import Dictionary.DictionaryCommandline;
+import Dictionary.DictionaryManagement;
 import Dictionary.Word;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+import java.io.FileNotFoundException;
+import java.io.File;
 
 import static Dictionary.Dictionary.dictionary_list;
 
@@ -21,17 +25,12 @@ public class Main extends Application {
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
 
         DictionaryCommandline dcm = new DictionaryCommandline();
-        Word a = new Word("hello", "xin chao");
-        Word b = new Word("strange", "lạ lẫm");
-        Word c = new Word("hand", "bàn tay");
-        dictionary_list.add(a);
-        dictionary_list.add(b);
-        dictionary_list.add(c);
+        DictionaryManagement dm = new DictionaryManagement();
+        dm.insertFromFile();
         dcm.dictionaryBasic();
-        dcm.showAllWords();
         launch(args);
     }
 }
