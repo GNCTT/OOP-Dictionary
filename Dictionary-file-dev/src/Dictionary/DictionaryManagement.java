@@ -37,6 +37,25 @@ public class DictionaryManagement {
         });
     }
 
+    public void Dictionary_Lookup(){
+        String a;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("nhập từ tìm kiếm:");
+        a = sc.nextLine();
+        int n = dictionary_list.size();
+        boolean check = false;
+        for(int i = 0;i<n;i++) {
+            if (a.equals(dictionary_list.get(i).getWord_target())) {
+                System.out.println("từ bạn cần tìm là :" + dictionary_list.get(i).getWord_explain());
+                check = true;
+                break;
+            }
+        }
+        if(check ==false) {
+            System.out.println("không có từ bạn cần tìm");
+        }
+    }
+
     public void addWord (Word new_word) {
         dictionary_list.add(new_word);
         sort_dictionary_list();

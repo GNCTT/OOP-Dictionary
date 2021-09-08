@@ -28,9 +28,7 @@ public class Main extends Application {
     public static void main(String[] args) throws FileNotFoundException {
 
         DictionaryCommandline dcm = new DictionaryCommandline();
-        DictionaryManagement dm = new DictionaryManagement();
-        dm.insertFromFile();
-        dcm.dictionaryBasic();
+        dcm.DictionaryAdvance();
         launch(args);
     }
 }

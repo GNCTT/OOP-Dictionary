@@ -1,6 +1,6 @@
 dog
 con chó
-hand 
+hand
 bàn tay
 fish
 con 
