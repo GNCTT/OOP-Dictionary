@@ -55,7 +55,15 @@ public class DictionaryManagement {
             System.out.println("không có từ bạn cần tìm");
         }
     }
-
+    public void addWordInList(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("nhap tu muon them :");
+        String word_target = sc.nextLine();
+        System.out.println("nhap nghia :");
+        String word_explain = sc.nextLine();
+        Word newWord = new Word(word_target,word_explain);
+        addWord(newWord);
+    }
     public void addWord (Word new_word) {
         dictionary_list.add(new_word);
         sort_dictionary_list();
