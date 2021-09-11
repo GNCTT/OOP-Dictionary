@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import java.io.IOException;
 
 import java.io.FileNotFoundException;
 import java.io.File;
@@ -25,12 +26,13 @@ public class Main extends Application {
     }
 
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws FileNotFoundException,IOException {
 
         DictionaryCommandline dcm = new DictionaryCommandline();
         DictionaryManagement dm = new DictionaryManagement();
-        dm.addWordInList();
         dcm.DictionaryAdvance();
+        dm.addWordInList();
+        dm.deleteWordInList();
         launch(args);
     }
 }
