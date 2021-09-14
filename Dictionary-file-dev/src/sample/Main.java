@@ -31,7 +31,6 @@ public class Main extends Application {
         DictionaryCommandline dcm = new DictionaryCommandline();
         DictionaryManagement dm = new DictionaryManagement();
         dcm.DictionaryAdvance();
-        dm.addWordInList();
         dm.deleteWordInList();
         launch(args);
     }

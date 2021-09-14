@@ -64,18 +64,19 @@ public class DictionaryManagement  {
         String word_explain = sc.nextLine();
         Word newWord = new Word(word_target,word_explain);
         addWord(newWord);
+        Deletefile();
         dictionaryExportToFile();
     }
     public void deleteWordInList() throws IOException,FileNotFoundException{ //xóa từ trong danh sách
-            insertFromFile();
             FileOutputStream fileout = new FileOutputStream(url);
             Scanner sc = new Scanner(System.in);
             System.out.println("nhap tu muon xoa :");
             String word_target = sc.nextLine();
             int n = dictionary_list.size();
             for(int i = 0; i<n;i++){
-                if(word_target.equals(dictionary_list.get(i).getWord_target())){
+                if(dictionary_list.get(i).getWord_target().equals(word_target)){
                     dictionary_list.remove(i);
+                    break;
                 }
             }
             dictionaryExportToFile();
