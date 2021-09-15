@@ -28,5 +28,12 @@ public class DictionaryCommandline {
         dcm.deleteWordInList();
         showAllWords();
     }
-
+    public void dictionarySearcher(String input){//hàm trả về các từ tìm kiếm nếu nhập dở
+        int iS = input.length();// độ dài chuỗi input
+        for(int i=0 ; i<dictionary_list.size();i++){
+             if(dictionary_list.get(i).getWord_target().substring(0,iS).equals(input)){
+                 System.out.println(dictionary_list.get(i).getWord_target()+"\t");
+             }
+        }
+    }
 }

@@ -81,7 +81,7 @@ public class DictionaryManagement  {
             }
             dictionaryExportToFile();
         }
-    public void fixInList() throws IOException{
+    public void fixInList() throws IOException{//sửa từ
         FileOutputStream fileout = new FileOutputStream(url);
         Scanner sc =  new Scanner(System.in);
         System.out.println("nhập từ cần sửa :");

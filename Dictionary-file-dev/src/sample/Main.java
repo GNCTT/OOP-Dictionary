@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.util.Scanner;
 
 import java.io.FileNotFoundException;
 import java.io.File;
@@ -30,6 +31,9 @@ public class Main extends Application {
 
         DictionaryCommandline dcm1 = new DictionaryCommandline();
         dcm1.DictionaryAdvance();
+        Scanner sc =new Scanner(System.in);
+        String input = sc.nextLine();
+        dcm1.dictionarySearcher(input);
         launch(args);
     }
 }
