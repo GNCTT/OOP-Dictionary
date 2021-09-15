@@ -28,10 +28,8 @@ public class Main extends Application {
 
     public static void main(String[] args) throws FileNotFoundException,IOException {
 
-        DictionaryCommandline dcm = new DictionaryCommandline();
-        DictionaryManagement dm = new DictionaryManagement();
-        dcm.DictionaryAdvance();
-        dm.deleteWordInList();
+        DictionaryCommandline dcm1 = new DictionaryCommandline();
+        dcm1.DictionaryAdvance();
         launch(args);
     }
 }

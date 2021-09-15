@@ -3,6 +3,7 @@ package Dictionary;
 import static Dictionary.Dictionary.dictionary_list;
 import java.io.FileNotFoundException;
 import java.io.File;
+import java.io.IOException;
 
 public class DictionaryCommandline {
 
@@ -18,10 +19,13 @@ public class DictionaryCommandline {
         dcm.sort_dictionary_list();
         showAllWords();
     }
-    public void DictionaryAdvance() throws FileNotFoundException{
+    public void DictionaryAdvance() throws IOException {
         DictionaryManagement dcm = new DictionaryManagement();
         dcm.insertFromFile();
         dcm.Dictionary_Lookup();
+        dcm.addWordInList();
+        dcm.fixInList();
+        dcm.deleteWordInList();
         showAllWords();
     }
 

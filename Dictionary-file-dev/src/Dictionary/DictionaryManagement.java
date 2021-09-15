@@ -19,7 +19,7 @@ public class DictionaryManagement  {
         Word new_word = new Word(word_target, word_explain);
         addWord(new_word);
     }
-    public void insertFromFile() throws FileNotFoundException{// đọc dữ liệu từ điển từ file
+    public void insertFromFile() throws IOException{// đọc dữ liệu từ điển từ file
         File file = new File(url);
         Scanner scfile = new Scanner(file);
         while(scfile.hasNextLine()){
@@ -81,6 +81,23 @@ public class DictionaryManagement  {
             }
             dictionaryExportToFile();
         }
+    public void fixInList() throws IOException{
+        FileOutputStream fileout = new FileOutputStream(url);
+        Scanner sc =  new Scanner(System.in);
+        System.out.println("nhập từ cần sửa :");
+        String Word_fix = sc.nextLine();
+        System.out.println("nhập nghĩa :");
+        String Word_expFix = sc.nextLine();
+        for(int i=0;i<dictionary_list.size();i++){
+            if(dictionary_list.get(i).getWord_target().equals(Word_fix)){
+                dictionary_list.get(i).setWord_target(Word_fix);
+                dictionary_list.get(i).setWord_explain(Word_expFix);
+                break;
+            }
+        }
+        Deletefile();
+        dictionaryExportToFile();
+    }
     public void Deletefile() throws IOException{
         File file = new File(url);
         file.delete();
