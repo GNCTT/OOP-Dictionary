@@ -1,5 +1,7 @@
 cat
 meo
+chicken
+ga
 hand
 tay
 old

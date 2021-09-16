@@ -1,5 +1,8 @@
 package Dictionary;
 
+import com.sun.java.accessibility.util.Translator;
+import com.sun.speech.freetts.VoiceManager;
+
 import static Dictionary.Dictionary.dictionary_list;
 import java.io.FileNotFoundException;
 import java.io.File;
@@ -35,5 +38,12 @@ public class DictionaryCommandline {
                  System.out.println(dictionary_list.get(i).getWord_target()+"\t");
              }
         }
+    }
+    public void Speech(String text){
+        VoiceManager voice = VoiceManager.getInstance();
+        com.sun.speech.freetts.Voice syntheticVoice = voice.getVoice("kevin16");
+        syntheticVoice.allocate();
+        syntheticVoice.speak(text);
+        syntheticVoice.deallocate();
     }
 }

@@ -3,6 +3,7 @@ package sample;
 import Dictionary.DictionaryCommandline;
 import Dictionary.DictionaryManagement;
 import Dictionary.Word;
+import com.sun.java.accessibility.util.Translator;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -34,6 +35,7 @@ public class Main extends Application {
         Scanner sc =new Scanner(System.in);
         String input = sc.nextLine();
         dcm1.dictionarySearcher(input);
+        dcm1.Speech("hello");
         launch(args);
     }
 }
